@@ -24,14 +24,14 @@ CACHE_DIR=$2
 LP_DIR=`cd $(dirname $0); cd ..; pwd`
 
 function download_and_install_ibm_db() {
-  CLI_URL="http://32d6b57f-fa6b-46dd-bb70-46cc65204d49-bluemix:c70e65bada3782a32b6d98d9e88070e41445b8722627fde09d81315c41654bc3@32d6b57f-fa6b-46dd-bb70-46cc65204d49-bluemix.cloudant.com/sample_nosql_db/1415027429105/v10.5fp5_linuxx64_s141031_odbc_cli.tar.gz"
+  CLI_URL="http://32d6b57f-fa6b-46dd-bb70-46cc65204d49-bluemix.cloudant.com/sample_nosql_db/1415101542401/db2_v105fp5_linuxx64_odbc_cli.tar.gz"
 
   echo "Downloading IBM Data Server Driver...."
   curl -LO "$CLI_URL"
 
   # Extracting and Cleaning DS Driver
   rm -rf clidriver
-  tar -xzf v10.5fp5_linuxx64_s141031_odbc_cli.tar.gz
+  tar -xzf db2_v105fp5_linuxx64_odbc_cli.tar.gz
 
   echo "Downloading autoconf..."
   curl -LO http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.gz
@@ -57,7 +57,7 @@ function download_and_install_ibm_db() {
 
   cd $BUILD_DIR
   #Cleaning clidriver, m4 and autoconf
-  rm -rf v10.5fp5_linuxx64_s141031_odbc_cli.tar.gz
+  rm -rf db2_v105fp5_linuxx64_odbc_cli.tar.gz
   rm -rf m4-1.4.13.tar.gz
   rm -rf m4-1.4.13
   rm -rf autoconf-2.69.tar.gz
